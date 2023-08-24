@@ -29,7 +29,7 @@ jobs:
         run: |
           docker build \
             -f Dockerfile \
-            -t ***.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:${{ steps.set-var.outputs.IMAGE_TAG }} .
+            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
       - name: Docker image push
         id: push-image
         run: |
