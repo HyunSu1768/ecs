@@ -34,7 +34,3 @@ jobs:
         id: push-image
         run: |
           docker push ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
-
-
-
-
