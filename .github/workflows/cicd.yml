@@ -23,13 +23,13 @@ jobs:
         run: |
           echo ::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}
           echo ::set-output name=ECR_REPOSITORY::cicd
-          echo ::set-output name=IMAGE_TAG::$(cat VERSION)
+          echo ::set-output name=IMAGE_TAG::latest
       - name: Docker image build
         id: build-image
         run: |
           docker build \
             -f Dockerfile \
-            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
+            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }} .
       - name: Docker image push
         id: push-image
         run: |
