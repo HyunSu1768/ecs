@@ -25,7 +25,7 @@ jobs:
         id: set-var
         run: |
           echo ::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}
-          echo ::set-output name=ECR_REPOSITORY::cicd
+          echo ::set-output name=ECR_REPOSITORY::hyunsu1768/service
           echo ::set-output name=IMAGE_TAG::latest
 
       - name: Grant execute permission for gradlew
