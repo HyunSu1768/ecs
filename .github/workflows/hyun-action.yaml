@@ -13,6 +13,5 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Deploy to HyunActions
-        uses: HyunsuPlayground/Hyun-Action@main
+        uses: HyunsuPlayground/Hyun-Action@beta
