@@ -1,4 +1,5 @@
 config:
   name: hyun
+  service_type: be
   port: 8080
   prefix: "/hyun"
